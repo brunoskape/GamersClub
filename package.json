@@ -1,0 +1,20 @@
+{
+    "name": "cypress",
+    "version": "7.3.0",
+    "description": "Simples Test With CI",
+    "main": "index.js",
+    "scripts": {
+      "cypress:open": "cypress open",
+      "cypress:run": "cypress run"
+    },
+    "keywords": [],
+    "author": "Bruno",
+    "license": "ISC",
+    "devDependencies": {
+      "cypress": "4.1"
+    },
+    "dependencies": {
+      "latest-version": "^5.1.0"
+    }
+  }
+  
