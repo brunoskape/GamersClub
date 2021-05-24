@@ -1,4 +1,4 @@
-//<reference types="cypress" />
+
 
 describe('search last match', () => {
     it('verify last match', () => {
