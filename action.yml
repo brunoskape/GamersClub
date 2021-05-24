@@ -1,6 +1,6 @@
 name: 'Cypress.io'
 description: 'GitHub Action for running Cypress end-to-end tests'
-author: 'Gleb Bahmutov'
+author: 'Bruno Skape'
 inputs:
   record:
     description: 'Sends test results to Cypress Dashboard'
@@ -84,7 +84,7 @@ outputs:
     description: 'Cypress Dashboard URL if the run was recorded'
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'support/index.js'
 branding:
   color: 'green'
   icon: 'check-square'
