@@ -1,0 +1,21 @@
+name: example-firefox
+on: push
+jobs:
+  firefox:
+    # should include Firefox browser install
+    # https://github.com/actions/virtual-environments
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Firefox
+        uses: ./
+        timeout-minutes: 3
+        with:
+          # let's show browser and system info
+          build: npx cypress info
+          working-directory: examples/firefox
+          browser: firefox
+
+     

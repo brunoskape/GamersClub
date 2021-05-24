@@ -4,7 +4,7 @@ on: [push]
 jobs:
   build-and-test-node12:
     runs-on: ubuntu-20.04
-    name: Node12
+    name: CI 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
