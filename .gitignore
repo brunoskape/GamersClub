@@ -4,3 +4,5 @@ fixtures
 settings.json
 videos
 cypress/videos/
+cypress/screenshots
+screenshots
