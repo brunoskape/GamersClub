@@ -1,17 +1,23 @@
 /// <reference types = "Cypress" />
 
 describe('search ranking', () => {
-    it('verify ranking', () => {
-
-        cy.visit('www.gamersclub.com.br')
-        cy.get('.ChangelogModal__close').click()
-        cy.get('.MainMenu__itemMedia > .fa').click()
-        cy.get('[href="/ranked"] > .MainMenu__itemLabel').click()
-        cy.get('.RankingHeader__title').contains('Ranking')
+    beforeEach(() => cy.visit('https://www.gamersclub.com.br/'))     
+    it('verify ranking general', () => {
+        
+       cy.acessarRanking()     
+       cy.get('.RankingHeader__title').contains('Ranking')
         
 
     })
 
+it('verify ranking challenge', () => {
+    cy.acessarRanking()     
+    cy.get('.RankingFilterButtonItem--challenge').click()
+    cy.url().should('contain', '=challenge');
+    
+ 
+
+})
 
 })
 

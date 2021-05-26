@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('acessarRanking', () => {
+
+cy.get('.ChangelogModal__close').click()
+cy.get('.MainMenu__itemMedia > .fa').click()
+cy.get('[href="/ranked"] > .MainMenu__itemLabel').click()
+
+})
