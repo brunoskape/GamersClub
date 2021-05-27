@@ -1,4 +1,4 @@
-name: Cypress
+name: Cypress e2e
 
 on: [ pull_request ]
 
@@ -12,3 +12,4 @@ jobs:
           fetch-depth: 0
       - name: run cypress
         run:  cypress-run
+      
