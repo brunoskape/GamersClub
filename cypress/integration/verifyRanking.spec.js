@@ -1,7 +1,8 @@
+const faker = require('faker')
 /// <reference types = "Cypress" />
 
 describe('search ranking and yours values', () => {
-    beforeEach(() => cy.visit('https://www.gamersclub.com.br/'))     
+  beforeEach(() => cy.visit('https://www.gamersclub.com.br/'))       
     it('verify ranking general', () => {
         
        cy.acessarRanking()     
@@ -33,11 +34,10 @@ describe('search ranking and yours values', () => {
         cy.acessarRanking()     
         cy.get('.RankingFilterButtonItem--pro').click()
         cy.url().should('contain', '=pro')
-        cy.get(':nth-child(1) > .slideInner___2mfX9 > .PrizesItem > .PrizesItem__imageContainer > .PrizesItem__image').should('have.text','RAZER MOUSE DEATHADDER V2 MINI')
+        cy.get(':nth-child(1) > .slideInner___2mfX9 > .PrizesItem > .PrizesItem__description').should('have.text','RAZER MOUSE DEATHADDER V2 MINI')
         cy.get(':nth-child(2) > .slideInner___2mfX9 > .PrizesItem > .PrizesItem__description').should('have.text','R$100,00 em skins')
- 
+        
 
     })
-
 
 })

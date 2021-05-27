@@ -23,10 +23,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+const faker = require('faker')
 Cypress.Commands.add('acessarRanking', () => {
 
-cy.get('.ChangelogModal__close').click()
-cy.get('.MainMenu__itemMedia > .fa').click()
-cy.get('[href="/ranked"] > .MainMenu__itemLabel').click()
+cy.get('.ChangelogModal__close').then($button =>{
+  if($button.is(':visible')) {
+    cy.get('.ChangelogModal__close').click()
+    cy.clickMenuRanking() 
 
+} else {
+        cy.clickMenuRanking()    
+        }
+    })
+})
+
+Cypress.Commands.add('clickMenuRanking', () => {
+
+    cy.get('.MainMenu__itemMedia > .fa').click()
+    cy.get('[href="/ranked"] > .MainMenu__itemLabel').click()
 })

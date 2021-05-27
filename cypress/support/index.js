@@ -1,4 +1,5 @@
 // ***********************************************************
+const faker = require('faker')
 /// <reference types = "Cypress" />
 // This example support/index.js is processed and
 // loaded automatically before your test files.

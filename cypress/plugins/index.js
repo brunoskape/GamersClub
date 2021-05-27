@@ -1,5 +1,6 @@
 
 // ***********************************************************
+const faker = require('faker')
 /// <reference types = "Cypress" />
 // This example plugins/index.js can be used to load plugins
 //
