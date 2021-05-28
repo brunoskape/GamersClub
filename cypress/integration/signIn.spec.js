@@ -15,13 +15,12 @@ describe('register', () => {
         cy.get('.ChangelogModal__close').click()
         cy.get('.MainHeader__primary > .AccountActionButtons > :nth-child(1) > .CustomButton > .CustomButton__text').click()
         cy.get('#authEmail').type(userData.randomEmail)
-        //cy.get('input[type=checkbox]').check()
-       //necessário refatorar o trecho abaixo
-        cy.get('.AuthForm__line--smallSpacing > .WasdCSFormCheckbox > .WasdCSFormCheckbox__item > .WasdCSFormCheckbox__fakeInput').click()
-        cy.get('.WasdCSButton--success').click()
-        
-    
 
+        cy.get('.AuthForm__line--smallSpacing > .WasdCSFormCheckbox > .WasdCSFormCheckbox__item > .WasdCSFormCheckbox__fakeInput').click() //necessário refatorar essa linha. 
+        cy.get('.WasdCSButton--success').invoke('removeAttr', 'target').click()
+        cy.get('#steamAccountName').type(userData.randomName)
+        cy.get('#steamPassword').type(userData.randomName)
+        cy.get(':nth-child(3) > h2').should('have.text', 'Observe que gamersclub.com.br não está associado ao Steam ou à Valve')
     })
 
 })
