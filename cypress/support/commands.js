@@ -37,8 +37,32 @@ cy.get('.ChangelogModal__close').then($button =>{
     })
 })
 
+
+Cypress.Commands.add('acessarAssinatura', () => {
+
+    cy.get('.ChangelogModal__close').then($button =>{
+      if($button.is(':visible')) {
+        cy.get('.ChangelogModal__close').click()
+        cy.clickMenuRanking() 
+    
+    } else {
+            cy.clickMenuRanking()    
+            }
+        })
+    })
+
+    Cypress.Commands.add('clickMenuAssinatura', () => {
+
+        cy.get('.MainMenu__itemMedia > .fa').click()
+        cy.get('[href="/shop"] > .MainMenu__itemLabel').click()
+    })
+
+
+
 Cypress.Commands.add('clickMenuRanking', () => {
 
     cy.get('.MainMenu__itemMedia > .fa').click()
     cy.get('[href="/ranked"] > .MainMenu__itemLabel').click()
 })
+
+
