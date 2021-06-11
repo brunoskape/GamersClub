@@ -66,3 +66,4 @@ Cypress.Commands.add('clickMenuRanking', () => {
 })
 
 
+import 'cypress-file-upload';

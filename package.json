@@ -1,7 +1,7 @@
 {
   
     "name": "cypress",
-    "version": "7.3.0",
+    "version": "7.5.0",
     "description": "Simples Test With CI",
     "main": "index.js",
 

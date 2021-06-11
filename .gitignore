@@ -6,4 +6,6 @@ videos
 cypress/videos/
 cypress/screenshots
 screenshots
-TJs.spec.js
+TJ.spec.js
+uploadExample.spec.js
+test.spec.js
