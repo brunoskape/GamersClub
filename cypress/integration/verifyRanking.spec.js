@@ -8,7 +8,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   })
 
 
-describe('search ranking and yours values', () => {
+describe('search all rank and yours values', () => {
   beforeEach(() => cy.visit('https://www.gamersclub.com.br/'))       
     it('verify ranking general', () => {
         
