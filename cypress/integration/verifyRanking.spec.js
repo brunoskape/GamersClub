@@ -48,7 +48,8 @@ describe('search ranking and yours values', () => {
         .should('be.visible')
         .click()
         cy.url().should('contain', '=pro')
-        cy.get(':nth-child(1) > .slideInner___2mfX9 > .PrizesItem > .PrizesItem__description').should('have.text','RAZER MOUSE DEATHADDER V2 MINI')
+        cy.get(':nth-child(1) > .slideInner___2mfX9 > .PrizesItem > .PrizesItem__description')
+          .should('have.text','RAZER MOUSE DEATHADDER V2 MINI')
         cy.get(':nth-child(2) > .slideInner___2mfX9 > .PrizesItem > .PrizesItem__description').should('have.text','R$100,00 em skins')
         
 
