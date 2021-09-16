@@ -1,36 +1,38 @@
-name: CI
-on:
-  pull_request: null
-  push:
-    branches:
-      - main
+name: Cypress Tests
+
+on: [push]
+
 jobs:
-  lint:
-    runs-on: ubuntu-18.04
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [12]
+  cypress-run:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: node.js 10 setup
-        uses: actions/setup-node@v2
-      - name: Installation of dependencies
-        run: npm ci
-      - name: Lint
-        run: npm run lint
-  api-tests-and-report:
-    runs-on: ubuntu-18.04
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [12]
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm start
+
+
+name: Cypress Tests using Cypress Docker Image
+
+on: [push]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Node.js 10 setup
-        uses: actions/setup-node@v2
-        
-     
-   
+
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          # Specify Browser since container image is compile with Firefox
+          browser: firefox
