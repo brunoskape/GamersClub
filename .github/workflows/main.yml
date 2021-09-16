@@ -17,10 +17,6 @@ jobs:
           start: npm start
 
 
-name: Cypress Tests using Cypress Docker Image
-
-on: [push]
-
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
